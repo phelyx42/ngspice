@@ -43,6 +43,8 @@ emconfigure ../configure --disable-debug --with-readline=no --disable-openmp --d
 
 wait
 
+export EMCC_CFLAGS="-s MODULARIZE=1 -s EXPORT_NAME=ngspice"
+
 emmake make || handle_error "Failed to run emmake make"
 
 wait
